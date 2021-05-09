@@ -1,0 +1,118 @@
+
+
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+<style> 
+textarea {
+  width: 40%;
+  height: 190px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1.5px solid #000000;
+  border-radius: 4px;
+  background-color: #ffffff;
+</style></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Course Project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'reg/styles/bootstrap4/bootstrap.min.css' %}">
+	<link href="{% static 'reg/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css' %}" rel="stylesheet"
+		type="text/css">
+	<link rel="stylesheet" type="text/css" href="{% static 'reg/plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'reg/plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'reg/plugins/OwlCarousel2-2.2.1/animate.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'reg/styles/main_styles.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'reg/styles/responsive.css' %}">
+	<link rel="stylesheet" href="{% static 'reg/bootstrap/css/bootstrap1.min.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+	<link rel="stylesheet" href="{% static 'reg/styles/Simple-Slider.css' %}">
+	<link rel="stylesheet" href="{% static 'reg/styles/styles.css' %}">
+<!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="background-color:#ebf5fb">
+	<div class="super_container">
+
+		<!-- Header -->
+
+		<header class="header d-flex flex-row">
+			<div class="header_content d-flex flex-row align-items-center">
+				<!-- Logo -->
+				<div class="logo_container">
+					<div class="logo">
+						<a style="text-decoration: none;" href="/"><img src="{% static 'reg/images/logo.png' %}"
+								alt="">
+							<span>test guide</span></a>
+					</div>
+				</div>
+
+				<!-- Main Navigation -->
+				<nav class="main_nav_container">
+					<div class="main_nav">
+						<ul class="main_nav_list">
+							<li class="main_nav_item"><a style="text-decoration: none;" href="/">Home</a></li>
+							<li class="main_nav_item"><a style="text-decoration: none;" href="/test_categories">Exams</a>
+							</li>
+							
+							<!--<li class="main_nav_item"><a href="courses.html">Courses</a></li>-->
+
+							<!--<li class="main_nav_item"><a style="text-decoration: none;" href="/gallery">Gallery</a>
+							</li>-->
+                                                          <li class="main_nav_item"><a style="text-decoration: none;"
+									href="\online_branch">Courses</a></li>
+                                                            <li class="main_nav_item"><a style="text-decoration: none;"
+									href="\newsletter">News Session</a></li>
+                                                           
+                                                              <li class="main_nav_item"><a style="text-decoration: none;"
+									href="\main">Q & A</a></li>
+							<li class="main_nav_item"><a href="/login_int">Login</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
+			<div class="header_side d-flex flex-row justify-content-center align-items-center">
+				<img src="{% static 'reg/images/phone-call.svg' %}" alt="">
+				<span>+91 8560021390</span>
+			</div>
+
+			<!-- Hamburger -->
+			<div class="hamburger_container">
+				<i class="fas fa-bars trans_200"></i>
+			</div>
+
+		</header>
+
+<br><br><br><br><br><br><br>
+
+<center>
+<h1>Please ask your Doubts and get clarified!</h1>
+<div class="content">
+{% for question in questions %}
+    <div class="question">
+        <a href="/question/{{ question.qid }}/{{ question.slug }}"><h1>{{ question.question_title }}</h1></a>
+        <p>{{ question.question_text|truncatechars:300|slice:"-4" }}...</p>
+        <button class="btn btn-primary" type="button" style="margin: 20px;">
+<a
+href="/ask-question" style="color: #f7f5f9;">Ask Question</a></button>
+    </div>
+{% endfor %}
+</div>
+</center>
+
+</body>
+</html>
+

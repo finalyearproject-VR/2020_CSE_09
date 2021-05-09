@@ -1,0 +1,258 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+<style> 
+textarea {
+  width: 40%;
+  height: 190px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1.5px solid #000000;
+  border-radius: 4px;
+  background-color: #ffffff;
+</style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Test guide</title>
+	<link rel="stylesheet" href="{%static 'reg/bootstrap/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/fonts/fontawesome-all.min.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/fonts/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/fonts/fontawesome5-overrides.min.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/Article-List.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/courses_styles.css' %}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+	<link rel="stylesheet" href="{%static 'reg/css/main_1.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/Projects-Horizontal.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/Registration-Form-with-Photo.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/styles_1.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/Team-Grid.css' %}">
+	<link rel="stylesheet" href="{%static 'reg/css/util_1.css' %}">
+	<style>
+		.container_1 {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+			flex-basis: auto;
+			justify-content: space-around;
+			align-items: baseline;
+			align-content: space-around;
+			align-self: baseline;
+		}
+
+		.footer_bar {
+			padding-top: 19px;
+			padding-bottom: 19px;
+		}
+
+		.footer_social .menu_social_item a i {
+			color: #FFFFFF;
+		}
+
+		.footer_social .menu_social_item a i:hover {
+			color: #66cd00;
+		}
+
+		.footer_social .menu_social_item:last-child {
+			margin-right: 0px;
+		}
+	</style>
+</head>
+
+<body style="background-color:#ebf5fb">
+
+	<header class="header d-flex flex-row">
+		<div class="header_content d-flex flex-row align-items-center">
+			<!-- Logo -->
+			<div class="logo_container">
+				<div class="logo">
+					<a style="text-decoration: none;" href="/"><img src="{% static 'reg/images/logo1.png' %}" alt="">
+						<span>E-Convocation</span></a>
+				</div>
+			</div>
+
+			<!-- Main Navigation -->
+			<nav class="main_nav_container">
+				<div class="main_nav">
+					<ul class="main_nav_list">
+						<li class="main_nav_item"><a style="text-decoration: none;" href="/">Home</a></li>
+						<!--<li class="main_nav_item"><a style="text-decoration: none;" href="/workshop">Exams</a>
+						</li>-->
+						<li class="main_nav_item"><a style="text-decoration: none;" href="">Exams</a></li>
+						<!--<li class="main_nav_item"><a href="courses.html">Courses</a></li>-->
+
+						<!--<li class="main_nav_item"><a style="text-decoration: none;" href="/gallery">Gallery</a>
+						</li>-->
+					<!--	<li class="main_nav_item"><a style="text-decoration: none;" href="\online_branch">Courses</a>
+						</li>
+						<li class="main_nav_item"><a style="text-decoration: none;" href="\newsletter">NewsSession</a>
+						</li>-->
+						<li class="main_nav_item"><a href="/login_int">Login</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="header_side d-flex flex-row justify-content-center align-items-center">
+			<img src="{% static 'reg/images/phone-call.svg' %}" alt="">
+			<span>+91 8560021390</span>
+		</div>
+
+		<!-- Hamburger -->
+		<div class="hamburger_container">
+			<i class="fas fa-bars trans_200"></i>
+		</div>
+
+	</header>
+
+
+	<div class="home"style="font-size:25px;">
+
+		<div class="home_content" >
+			<h1>Graduation Vedio
+			</h1>
+		</div>
+	</div>
+	<div class="projects-horizontal">
+		<div class="container">
+			<div class="row projects">
+				<div class="container_1">
+					{% for newsletter in newsletters %}
+					<div class="card shadow-lg" data-bs-hover-animate="pulse" style="margin: 60px; width:360px; height:500px;  "><video width="360" height="200" controls>
+						<source src="{{newsletter.videos1.url}}" type="video/mp4"><!--<br><br><br><br><br><br><br><br><br>--></video>
+						<div class="card-body">
+							<h4 class="card-title" style="font-size: 30px; padding:15px;color: #000000;">{{newsletter.title}}</h4>
+							<p class="card-text" style="padding: 10px; font-size: medium;">{{newsletter.description}}
+							</p>
+                                                        <!--<button class="btn btn-primary" type="link" style="margin: 20px;"><a href="/videos1/{{newsletter_id}}"
+								style="color: #f7f5f9;">View More</a></button>-->
+						</div>
+					</div>
+
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer class="footer">
+		<div class="container">
+
+
+
+			<!-- Footer Content -->
+
+			<div class="footer_content">
+				<div class="row">
+
+					<!-- Footer Column - About -->
+					<div class="col-lg-3 footer_col">
+
+						<!-- Logo -->
+						<div class="logo_container">
+							<div class="logo">
+								<span>About Us</span>
+							</div>
+						</div>
+
+						<p class="footer_about_text">We are on a mission to reshape the process of how students prepare online for competitive exams.</p>
+
+					</div>
+
+					<!-- Footer Column - Menu -->
+
+					<div class="col-lg-6 footer_col">
+						<center>
+							<div class="footer_column_title">Menu</div>
+							<div class="footer_column_content">
+								<ul><li class="footer_list_item"><a href="#">Home</a></li>
+									<li class="footer_list_item"><a href="#">Exams</a></li>
+									<li class="footer_list_item"><a href="#">Courses</a></li>
+                                                                       <li class="footer_list_item"><a href="#">News Session</a></li>
+                                                                            <li class="footer_list_item"><a href="#">Doubts</a></li>
+									
+								</ul>
+							</div>
+						</center>
+					</div>
+
+
+					<!-- Footer Column - Contact -->
+
+					<div class="col-lg-3 footer_col">
+						<div class="footer_column_title">Contact</div>
+						<div class="footer_column_content">
+							<ul>
+								<!--<li class="footer_contact_item">
+									<div class="fa fa-map-marker" style="color: #66cd00; width: 20px;">
+
+									</div>
+									
+								</li>-->
+								<li class="footer_contact_item">
+									<div class="fa fa-phone" style="color: #66cd00; width: 20px;">
+
+									</div>
+									+91 8560021390
+								</li>
+								<li class="footer_contact_item">
+									<div class="fa fa-envelope" style="color: #66cd00; width: 20px;">
+
+									</div>testguide@gmail.com
+								</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Footer Copyright -->
+
+			<div class="footer_bar d-flex flex-column flex-sm-row align-items-center">
+				<div class="footer_copyright">
+					<span>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script>  testguide.com | All rights
+						reserved
+					</span>
+				</div>
+<!--<p><center>@2020 testguide.com | All rights
+						reserved</center></p>-->
+				<div class="footer_social ml-sm-auto">
+					<ul class="menu_social">
+						<li class="menu_social_item"><a
+								href=""><i
+									class="fab fa-youtube"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-instagram"></i></a></li>
+						<li class="menu_social_item"><a
+								href=""><i
+									class="fab fa-facebook-f"></i></a></li>
+						<li class="menu_social_item"><a href="#"><i class="fab fa-twitter"></i></a></li>
+						<li class="menu_social_item"><a
+								href="https://api.whatsapp.com/send?phone=918560021390&text=&sorce=&data="><i
+									class="fab fa-whatsapp"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	</div>
+
+	<script src="{% static 'reg/js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{% static 'reg/styles/bootstrap4/popper.js' %}"></script>
+	<script src="{% static 'reg/styles/bootstrap4/bootstrap.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/greensock/TweenMax.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/greensock/TimelineMax.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/scrollmagic/ScrollMagic.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/greensock/animation.gsap.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/greensock/ScrollToPlugin.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/OwlCarousel2-2.2.1/owl.carousel.js' %}"></script>
+	<script src="{% static 'reg/plugins/scrollTo/jquery.scrollTo.min.js' %}"></script>
+	<script src="{% static 'reg/plugins/easing/easing.js' %}"></script>
+	<script src="{% static 'reg/js/custom.js' %}"></script>
+
+</body>
+
+</html>

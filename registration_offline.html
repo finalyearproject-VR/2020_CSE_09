@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PrinstonSMART.com – Prinston Smart Engineers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'reg/images/icons/favicon.ico' %}">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/css/main.css' %}">
+    <!--===============================================================================================-->
+</head>
+
+<body>
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div style="margin-bottom:100px" class="login100-pic js-tilt" data-tilt="">
+                    <img src="{%static 'reg/images/img-01.png' %}" alt="IMG">
+                </div>
+
+                <form style="margin-top: 40px;" method="POST" action="" class="login100-form validate-form">
+                    {% csrf_token %}
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-success" role="alert">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif%}
+                    <br>
+                    <span class=" login100-form-title">
+                        Register Offline Course
+                    </span>
+
+                    <div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                        <input class="input100" type="text" name="email" placeholder="Email" value="{{user.email}}">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <input class="input100" type="text" name="enrolled_type" value="Offline course">
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input">
+                        <!-- <input class="input100" type="text" name="stream" placeholder="stream"> -->
+                        <select class="input100" name="enrolled_for" required="">
+                            <option style="display: none;" class="input100" disabled="" selected="">Enrollment For
+                            </option>
+                            {% for offline in offlinecou %}
+                            <option class="input100">{{offline.title}}</option>
+                            {% endfor %}
+                        </select>
+                        <span class="focus-input100"></span>
+                        <span class="symbol-input100">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                        </span>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button type="submit" style="background-color: #66cd00; color: white;"
+                            class="login100-form-btn">
+
+                            Register
+
+                        </button>
+                    </div>
+                    <br><br>
+                    <div style=" text-align: center;">
+                        <a class="txt2" href="/offline_course"
+                            style="color: 4e4d4e; font-size: 12px; font-family: Montserrat-Bold;">
+                            Go-To offline course
+                        </a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'reg/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/js/main.js' %}"></script>
+</body>
+
+</html>

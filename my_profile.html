@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PrinstonSMART.com – Prinston Smart Engineers</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{% static 'reg/images/icons/favicon.ico' %}">
+
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'reg/css/main.css' %}">
+
+    <!--===============================================================================================-->
+</head>
+
+<body>
+
+    <!-- 
+        <div class="container-login100">
+            <div class="wrap-login100">
+                
+                </div>
+            </div>
+        </div> -->
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                            <div class="container" style="border-bottom:1px solid black">
+                                <h1 style="color: #8fd19e;">{{user_cred.name}}</h1>
+                            </div>
+                            <br>
+                            <ul class="container details">
+                                <li>
+                                    <p style="font-size:larger;"><span class="fa fa-phone" style="width:20px;"></span>
+                                        {{user_cred.mob_no}}</p>
+                                </li>
+                                <li>
+                                    <p style="font-size:larger;"><span class="fa fa-envelope"
+                                            style="width:20px;"></span>
+                                        {{user_cred.email}}</p>
+                                </li>
+                                <li>
+                                    <p style="font-size:larger;"><span class="fa fa-university"
+                                            style="width:20px;"></span>
+                                        {{user_cred.institution}}</p>
+                                </li>
+                                <li>
+                                    <p style="font-size:larger;"><span class="fa fa-book" style="width:20px;"></span>
+                                        {{user_cred.department}}</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <h4>Previously Enrolled Events</h4>
+                    <br>
+                    <table class="table table-hover table-success">
+                        <thead>
+                            <tr>
+
+                                <th scope="col">Enrolled Type</th>
+                                <th scope="col">Enrolled Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for enrolled_event in enrolled_events %}
+                            <tr>
+
+                                <td>{{enrolled_event.enrolled_type}}</td>
+                                <td>{{enrolled_event.enrolled_for}}</td>
+
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    <div style=" text-align:left;">
+
+                        <a class="txt_2" href="/" style="color: 4e4d4e; font-size: 14px; font-family: Montserrat-Bold;">
+                            Home</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'reg/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/vendor/tilt/tilt.jquery.min.js' %}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+    <!--===============================================================================================-->
+    <script src="{% static 'reg/js/main.js' %}"></script>
+
+</body>
+
+</html>
