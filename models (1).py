@@ -3,7 +3,14 @@ from django.utils.text import slugify
 
 # Create your models here.
 
-
+class Url(models.Model):
+    urlid=models.IntegerField(primary_key=True)
+    video_url=models.CharField(max_length=10000)
+    
+    def __str__(self):
+        return self.video_url
+    
+    
 class User(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField(primary_key=True)
